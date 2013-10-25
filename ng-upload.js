@@ -63,7 +63,12 @@ angular.module('ngUpload', [])
                 }
 
                 // submit the form 
-                var form = getParentNodeByTagName(element, 'form');
+                var form;
+                if (attrs.formId) {
+                    form = document.getElementById(attrs.formId);
+                } else {
+                    form = getParentNodeByTagName(element, 'form');
+                }
 
                 // Retrieve the callback function
                 var fn = $parse(attrs.uploadSubmit);
