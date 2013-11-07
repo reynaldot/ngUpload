@@ -65,7 +65,7 @@ angular.module('ngUpload', [])
                 // submit the form 
                 var form;
                 if (attrs.formId) {
-                    form = document.getElementById(attrs.formId);
+                    form = angular.element(document.getElementById(attrs.formId));
                 } else {
                     form = getParentNodeByTagName(element, 'form');
                 }
